@@ -1,7 +1,7 @@
 # keyboardEvents
 Simple keydown, keyup and keyhold event handling.
 
-# Usage
+## Usage
 
 First, request the script in an HTML document:
 ``` html
@@ -41,7 +41,7 @@ Subscriptions to key events can be cancelled all at once or separately using the
 ```
 
 
-# Options
+## Options
 The duration of the interval between 'onkeyhold' events can be set by passing an options object on calls to the #emitter method:
 ``` js
 // If keys are hold down, emit keyhold events every 100 milliseconds instead of the default 33:
