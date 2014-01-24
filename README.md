@@ -3,8 +3,8 @@ Simple keydown, keyup and keyhold event handling.
 
 # Usage
 
-First, request the script in your HTML document:
-``` js
+First, request the script in an HTML document:
+``` html
     <script src='path/to/keyboardEvents.js'></script>
 ```
 
@@ -22,10 +22,20 @@ keyboard.on('up_arrow', 39, {
   },
   'onkeyhold': function (delta) {
     // Do something every 'delta' miliseconds the key is hold down
+    // The default interval is 33 milliseconds, equivalent to 30 fps
   },
   'onkeyup': function () {
     // Do something when the key is released
   }
 });
-```
+```  
 
+Subscriptions to key events can be cancelled all at once or separately using the #off method:
+``` js
+// Unsubscribe from all the events of the up arrow key
+    keyboard.off('up_arrow', 39);
+// Unsubscribe from one event by providing a string with the event name
+    keyboard.off('up_arrow', 39, 'onkey____');
+// Unsubscribe from more than one event by providing a space separated string of event names
+    keyboard.off('up_arrow', 39, 'onkey____ onkey____');
+```
