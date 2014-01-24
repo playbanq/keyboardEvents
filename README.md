@@ -39,3 +39,13 @@ Subscriptions to key events can be cancelled all at once or separately using the
 // Unsubscribe from more than one event by providing a space separated string of event names
     keyboard.off('up_arrow', 39, 'onkey____ onkey____');
 ```
+
+
+# Options
+The duration of the interval between 'onkeyhold' events can be set by passing an options object on calls to the #emitter method:
+``` js
+// If keys are hold down, emit keyhold events every 100 milliseconds instead of the default 33:
+var keyboard = KeyboardEvents.emitter({
+    keyholdInterval: 100
+});
+```
